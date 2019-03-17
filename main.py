@@ -48,7 +48,7 @@ def electric_car(environment, name, charging_station, arrival_time, charging_tim
 
 arrival_time = 0
 # simulate car processes
-for i in range(6):
+for i in range(len(interarrival_times)):
      arrival_time += interarrival_times[i]
      charging_time = charging_times[i]
      environment.process(electric_car(environment, 'Car %d' % i, charging_station, arrival_time, charging_time))
