@@ -3,7 +3,6 @@
 import simpy
 import statistics
 
-############CREATE MODEL############
 # instantiate execution environment for simulation
 environment = simpy.Environment()
 
@@ -14,7 +13,6 @@ with open("model_inputs.txt") as input_file:
         line = line.strip('\n')
         model_info.append((line))
 
-print(model_info)
 capacity = int(model_info[1]) # get environment capacity
 
 # service station resource
@@ -27,7 +25,6 @@ with open("interarrival_times.txt") as input_file:
         line = line.strip('\n')
         interarrival_times.append(float(line))
 
-print(interarrival_times)
 
 #find service times
 service_times = []
@@ -36,13 +33,11 @@ with open("service_times.txt") as input_file:
         line = line.strip('\n')
         service_times.append(float(line))
 
-print(service_times)
 
 # statistics initialization
 waiting_times = []
 queue_lengths = []
 idle_times = []
-
 
 print("\nEach",model_info[2],"will be serviced by",model_info[0],"\n")
 
@@ -69,8 +64,6 @@ def entity(environment, name, service_station, arrival_time, service_time):
          idle_times.append(environment.now)
          
          # collect waiting times
-         
-         
          waiting_times.append(waiting_time)
          queue_lengths.append(len(service_station.queue))
 
@@ -92,15 +85,13 @@ while (i < len(idle_times)-1):
   idle_total+=idle_times[i+1]-idle_times[i]
   i=i+2
 
-#calculate resource utilization %
-
-
-print("\nSummary")
+print("\n\033[4mSummary\033[0m")
+print("Total time elapsed =",idle_times[-1],"minutes")
 print ("Minumum queue length =",min(queue_lengths))
 print ("Maximum queue length =",max(queue_lengths))
 
 print ("Total idle time for the resource = %3.2f minutes" % idle_total)
-print("Resource utilization percent = ")
+print("Resource utilization percent =",100-(idle_times[-1]-idle_total),"%")
 
 print ("Total queue time = %3.2f minutes" % sum(waiting_times))
 print ("Mean waiting time = %3.2f minutes" % statistics.mean(waiting_times))
