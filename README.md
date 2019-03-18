@@ -4,8 +4,11 @@ This is a discrete event simulator used to model any generic discrete event simu
 Inputs: Given to model through 3 different txt files.
 
 model_inputs.txt: 
+  
   Line 1 of this file is the server name.
+ 
   Line 2 of this file is the server capacity.
+  
   Line 3 of this file is the entity name.
   
   Example:
@@ -56,7 +59,7 @@ service_times.txt:
     
 Output of this example:
  
- Each customer will be serviced by Jamba Juice
+Each customer will be serviced by Jamba Juice
 
 customer 0 arriving at 0.0
 
