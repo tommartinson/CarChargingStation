@@ -9,6 +9,7 @@ model_inputs.txt:
   Line 3 of this file is the entity name.
   
   Example:
+  
     Jamba Juice
     
     1
@@ -16,9 +17,11 @@ model_inputs.txt:
     customer
 
 interarrival_times.txt: 
-  Each line of this file represents an interr-arrival time between entities.
+ 
+ Each line of this file represents an interr-arrival time between entities.
   
   Example: 
+  
     0 
     
     2.3
@@ -33,9 +36,11 @@ interarrival_times.txt:
     
 
 service_times.txt:
+  
   Each line of this file represents a service time for an entity.
   
   Example:
+    
     2.0 
     
     3.2 
@@ -50,7 +55,8 @@ service_times.txt:
     
     
 Output of this example:
-  Each customer will be serviced by Jamba Juice
+ 
+ Each customer will be serviced by Jamba Juice
 
 customer 0 arriving at 0.0
 
@@ -99,6 +105,7 @@ customer 5 waiting time 1.3
 customer 5 starting service at 11.7
 
 customer 5 leaving at 12.5
+
 
 
 Summary
